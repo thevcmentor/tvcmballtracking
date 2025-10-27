@@ -1,7 +1,10 @@
-fastapi
-uvicorn
-opencv-python
-numpy
-requests
-ultralytics
-filterpy
+fastapi==0.115.0
+uvicorn==0.30.6
+opencv-python-headless==4.10.0.84
+numpy==1.26.4
+requests==2.32.3
+ultralytics==8.3.0
+filterpy==1.4.5
+# CPU-only PyTorch wheels (works on Render’s Linux images)
+torch==2.3.1
+torchvision==0.18.1
