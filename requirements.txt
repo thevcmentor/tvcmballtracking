@@ -5,6 +5,5 @@ numpy==1.26.4
 requests==2.32.3
 ultralytics==8.3.0
 filterpy==1.4.5
-# CPU-only PyTorch wheels (works on Render’s Linux images)
 torch==2.3.1
 torchvision==0.18.1
