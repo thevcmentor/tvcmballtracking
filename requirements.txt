@@ -4,8 +4,6 @@ opencv-python-headless==4.10.0.84
 numpy==1.26.4
 requests==2.32.3
 filterpy==1.4.5
-# Py3.12-compatible Torch + Vision
 torch==2.5.0
 torchvision==0.20.0
-# Ultralytics that works fine on Py3.12 + Torch 2.5
 ultralytics==8.3.24
