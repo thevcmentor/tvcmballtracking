@@ -23,4 +23,4 @@ RUN pip install --extra-index-url https://download.pytorch.org/whl/cpu \
 RUN pip install -r requirements.txt
 
 EXPOSE 10000
-CMD ["sh","-c","uvicorn app:app --host 0.0.0.0 --port ${PORT:-10000}"]
+CMD ["bash", "-c", "uvicorn app:app --host 0.0.0.0 --port ${PORT:-8000}"]
