@@ -22,5 +22,5 @@ RUN pip install --extra-index-url https://download.pytorch.org/whl/cpu \
 # 3) install the rest (do NOT include torch/vision again in requirements)
 RUN pip install -r requirements.txt
 
-EXPOSE 10000
-CMD ["bash", "-c", "uvicorn app:app --host 0.0.0.0 --port ${PORT:-8000}"]
+ENV PORT=10000
+CMD ["uvicorn","app:app","--host","0.0.0.0","--port","10000"]
