@@ -14,13 +14,11 @@ COPY app.py /app/app.py
 # 1) upgrade pip tooling
 RUN pip install --upgrade pip wheel setuptools
 
-# 2) install PyTorch + torchvision CPU wheels from the official index
-#    This pair is compatible with Python 3.11 CPU wheels.
-RUN pip install --extra-index-url https://download.pytorch.org/whl/cpu \
-    torch==2.5.1 torchvision==0.20.1
+# install torch/vision first
+RUN pip install --extra-index-url https://download.pytorch.org/whl/cpu torch==2.5.0 torchvision==0.22.1
 
-# 3) install the rest (do NOT include torch/vision again in requirements)
+# then the rest
 RUN pip install -r requirements.txt
 
 ENV PORT=10000
-CMD ["uvicorn","app:app","--host","0.0.0.0","--port","10000"]
+CMD ["sh","-c","uvicorn app:app --host 0.0.0.0 --port ${PORT:-10000}"]
